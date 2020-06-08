@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import { Container } from "../global"
+import { Container, Section } from "../global"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "home" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -27,24 +27,23 @@ const Header = () => {
       <Container>
         <Flex>
           <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
+            <Subtitle>Property Manangement</Subtitle>
             <h1>
-              All your money,
+              Manage your property,
               <br />
-              one account
+              from anywhere
             </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+            Your rental portfolio is only as good as your real estate investing team.
+            Find local, trusted property management help.
             </h2>
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInput placeholder="Your email" />
-              <HeaderButton>Early access</HeaderButton>
-            </HeaderForm>
-            <FormSubtitle>
+            <a href="https://coraway.typeform.com/to/Ttjs8g">
+              <HeaderButton>Request a demo</HeaderButton>
+            </a>
+            {/* <FormSubtitle>
               Already have a beta account?{" "}
               <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
+            </FormSubtitle> */}
           </HeaderTextGroup>
           <ImageWrapper>
             <StyledImage fluid={data.file.childImageSharp.fluid} />
@@ -97,6 +96,10 @@ const HeaderTextGroup = styled.div`
 
   p {
     margin-bottom: 48px;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
 
@@ -168,6 +171,7 @@ const HeaderButton = styled.button`
   height: 60px;
   display: block;
   margin-left: 8px;
+  margin-bottom: 70px;
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
@@ -187,6 +191,12 @@ const HeaderButton = styled.button`
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
   }
+`
+const AccentButton = styled(HeaderButton)`
+  background: transparent;
+  border: 1px solid #098C8C;
+  color: #098C8C;
+  padding: 0px 50px;
 `
 const ImageWrapper = styled.div`
   justify-self: end;

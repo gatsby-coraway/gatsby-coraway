@@ -1,40 +1,89 @@
 import React from "react"
 import styled from "styled-components"
-
+import  Img from "gatsby-image"
+import {useStaticQuery, graphql} from  "gatsby"
 import { Section, Container } from "../global"
 
-const Features = () => (
+const Features = () => {
+  const data = useStaticQuery(graphql`
+  query {
+  imageOne: file(relativePath: { eq: "vetted-pros.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageTwo: file(relativePath: { eq: "teams.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageThree: file(relativePath: { eq: "recommend.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageFour: file(relativePath: { eq: "research.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`);
+return(
   <Section id="features">
     <StyledContainer>
       <Subtitle>Features</Subtitle>
-      <SectionTitle>Smart money management</SectionTitle>
+      <SectionTitle>Long distance management</SectionTitle>
       <FeaturesGrid>
         <FeatureItem>
-          <FeatureTitle>Notifications</FeatureTitle>
+          <ImageWrapper>
+            <StyledImage fluid={data.imageOne.childImageSharp.fluid} />
+          </ImageWrapper>
+          <FeatureTitle>Pre-vetted pros</FeatureTitle>
           <FeatureText>
-            Receive budget and spending alerts based on your favorite triggers.
+          Explore curated property management data from Google reviews, 
+          Yelp BiggerPockets, and investor referrals.
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Security</FeatureTitle>
+          <ImageWrapper>
+            <StyledImage fluid={data.imageTwo.childImageSharp.fluid} />
+          </ImageWrapper>
+          <FeatureTitle>Build a team</FeatureTitle>
           <FeatureText>
-            Your data is always safe with us as we use the latest security
-            protocols.
+          Create a team of reliable real estate investors and property managers close by
+          to your distant property.
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Automation</FeatureTitle>
+          <ImageWrapper>
+            <StyledImage fluid={data.imageThree.childImageSharp.fluid} />
+          </ImageWrapper>
+          <FeatureTitle>Get recommendations</FeatureTitle>
           <FeatureText>
-            Create smart automated workflows and triggers for your money.
+          Coraway makes management simpler by recommending property 
+          management pros that are perfect for you. 
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Aggregation</FeatureTitle>
+         <ImageWrapper>
+            <StyledImage fluid={data.imageFour.childImageSharp.fluid} />
+          </ImageWrapper>
+          <FeatureTitle>Market research</FeatureTitle>
           <FeatureText>
-            Easily link up to 5 banks to your finance account.
+            Want to invest in affordable markets but don’t know where 
+            to start? We partner with experts to give you advice.
           </FeatureText>
         </FeatureItem>
-        <FeatureItem>
+        {/* <FeatureItem>
           <FeatureTitle>Payments</FeatureTitle>
           <FeatureText>Send money to friends and family with ease.</FeatureText>
         </FeatureItem>
@@ -43,11 +92,11 @@ const Features = () => (
           <FeatureText>
             High interest and rewards for hitting your goals.
           </FeatureText>
-        </FeatureItem>
+        </FeatureItem> */}
       </FeaturesGrid>
     </StyledContainer>
-  </Section>
-)
+  </Section>)
+}
 
 export default Features
 
@@ -98,4 +147,23 @@ const FeatureTitle = styled.h4`
 
 const FeatureText = styled.p`
   text-align: center;
+`
+
+const ImageWrapper = styled.div`
+justify-self: end;
+align-self: center;
+@media (max-width: ${props => props.theme.screen.md}) {
+  justify-self: center;
+}
+`
+
+const StyledImage = styled(Img)`
+width: 200px;
+@media (max-width: ${props => props.theme.screen.md}) {
+  width: 200px;
+}
+@media (max-width: ${props => props.theme.screen.sm}) {
+  width: 100px;
+  display: none;
+}
 `

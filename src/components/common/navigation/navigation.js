@@ -2,8 +2,10 @@ import React, { Component } from "react"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
-
+import {Image} from '../image';
 import { Container } from "../../global"
+import corawayLogo from "../../../images/coraway-logo.png"
+
 import {
   Nav,
   NavItem,
@@ -15,7 +17,7 @@ import {
   ActionsContainer,
 } from "./style"
 
-const NAV_ITEMS = ["Features", "Product", "Pricing", ""]
+const NAV_ITEMS = ["Features", "Services", "Contact Us", ""]
 
 export default class Navigation extends Component {
   state = {
@@ -70,14 +72,13 @@ export default class Navigation extends Component {
 
   render() {
     const { mobileMenuOpen } = this.state
-
     return (
       <Nav {...this.props} scrolled={this.state.hasScrolled}>
         <StyledContainer>
           <Brand>
             <Scrollspy offset={-64} item={["top"]} currentClassName="active">
-              <AnchorLink href="#top" onClick={this.closeMobileMenu}>
-                Finance
+              <AnchorLink href="#top" onClick={this.closeMobileMenu} style={{color:'#098c8c'}}>
+                Coraway
               </AnchorLink>
             </Scrollspy>
           </Brand>
@@ -96,7 +97,9 @@ export default class Navigation extends Component {
 
           <Mobile hide>{this.getNavList({})}</Mobile>
           <ActionsContainer>
-            <button>Sign up</button>
+          <a href="https://coraway.typeform.com/to/Ttjs8g">
+            <button>Get Started</button>
+            </a>
           </ActionsContainer>
         </StyledContainer>
         <Mobile>
