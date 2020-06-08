@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <HeaderWrapper id="top">
-      <Container>
+      <HeaderContainer>
         <Flex>
           <HeaderTextGroup>
             <Subtitle>Property Manangement</Subtitle>
@@ -50,7 +50,7 @@ const Header = () => {
             <br />
           </ImageWrapper>
         </Flex>
-      </Container>
+      </HeaderContainer>
     </HeaderWrapper>
   )
 }
@@ -64,6 +64,9 @@ const HeaderWrapper = styled.header`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
   }
+`
+const HeaderContainer = styled(Container)`
+  margin-bottom: 50px
 `
 const Subtitle = styled.h5`
   font-size: 16px;

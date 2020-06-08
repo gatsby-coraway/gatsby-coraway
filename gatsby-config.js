@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: "/gatsby-coraway",
   siteMetadata: {
-    title: `Gatsby Starter SaaS Marketing`,
+    title: `Coraway`,
     description: `A simple one page marketing starter for saas companies.`,
     author: `Keegan Burkett`,
   },

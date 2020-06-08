@@ -4,7 +4,6 @@ import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
 import {Image} from '../image';
 import { Container } from "../../global"
-import corawayLogo from "../../../images/coraway-logo.png"
 
 import {
   Nav,
