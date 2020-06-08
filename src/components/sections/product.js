@@ -22,6 +22,7 @@ return(
   <Container>
         <Flex>
           <HeaderTextGroup>
+          <Subtitle>Services</Subtitle>
             <h2>
                 Our Solution
             </h2>
@@ -87,6 +88,12 @@ const HeaderTextGroup = styled.div`
       padding-bottom: 15px;
       color: #098c8c;
   }
+`
+const Subtitle = styled.h5`
+  font-size: 16px;
+  color: ${props => props.theme.color.accent};
+  letter-spacing: 0px;
+  margin-bottom: 16px;
 `
 
 const Flex = styled.div`

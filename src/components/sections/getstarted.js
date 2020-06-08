@@ -1,15 +1,19 @@
 import React from "react"
 import styled from "styled-components"
-
 import { Container, Section } from "../global"
 
 const GetStarted = () => (
   <Section id="Contact">
   <StyledSection>
     <GetStartedContainer>
-      <GetStartedTitle>Be the first to get the beta</GetStartedTitle>
+      <Subtitle>Contact Us</Subtitle>
+      <GetStartedTitle>Save time and grow your portfolio</GetStartedTitle>
+      <FeatureText>
+          Have any questions? Thats great! Contact us at <a href="mailto:info@thecoraway.com">info@thecoraway.com</a> 
+          <br/>or click the button below and we will reach out to you.
+      </FeatureText>
       <a href="https://coraway.typeform.com/to/Ttjs8g">
-      <TryItButton>Get early access</TryItButton>
+      <TryItButton>Get in touch</TryItButton>
       </a>
       {/* <Subtitle>No credit card required.</Subtitle> */}
     </GetStartedContainer>
@@ -22,6 +26,20 @@ export default GetStarted
 const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.light};
   clip-path: polygon(0% 14%,100% 0%,100% 100%,0% 100%);
+`
+const FeatureText = styled.p`
+  text-align: center;
+  margin-bottom: 45px;
+  margin-top: 10px;
+  a{
+    color:#098c8c;
+  }
+`
+const Subtitle = styled.h5`
+  font-size: 16px;
+  color: ${props => props.theme.color.accent};
+  letter-spacing: 0px;
+  margin-bottom: 16px;
 `
 
 const GetStartedContainer = styled(Container)`
@@ -38,7 +56,7 @@ const GetStartedContainer = styled(Container)`
 `
 
 const GetStartedTitle = styled.h3`
-  margin: 0 auto 32px;
+  margin: 0 auto 0px;
   text-align: center;
 `
 
@@ -69,11 +87,4 @@ const TryItButton = styled.button`
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
   }
-`
-
-const Subtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-  padding-top: 16px;
-  font-size: 14px;
-  color: ${props => props.theme.color.primary};
 `
