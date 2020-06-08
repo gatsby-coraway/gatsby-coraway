@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/gatsby-coraway",
   siteMetadata: {
     title: `Coraway`,
     description: `A simple one page marketing starter for saas companies.`,
