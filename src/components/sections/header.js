@@ -29,13 +29,13 @@ const Header = () => {
           <HeaderTextGroup>
             <Subtitle>Property Manangement</Subtitle>
             <h1>
-              Manage your property,
-              <br />
-              from anywhere
+              Long distance real estate investing
+              simplified.
             </h1>
             <h2>
-            Your rental portfolio is only as good as your real estate investing team.
-            Find local, trusted property management help.
+            Your rental portfolio is only as good as your team. 
+            <br/>
+            Get matched to the best local agents, investors, and contractors for your investment needs.
             </h2>
             <a href="https://coraway.typeform.com/to/Ttjs8g">
               <HeaderButton>Request a demo</HeaderButton>

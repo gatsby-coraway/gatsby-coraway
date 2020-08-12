@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Coraway`,
-    description: `A simple one page marketing starter for saas companies.`,
-    author: `Keegan Burkett`,
+    description: `App connecting long distant landlords.`,
+    author: `Mary Gansallo`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,6 +38,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/coraway-logo.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-157282761-1",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
